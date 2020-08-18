@@ -11,7 +11,7 @@ function App() {
           Hello World!
         </p>
         <p>
-          From Gabriel Schlam
+          From Gabriel Schlam 
         </p>
         <a class="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a>
       </header>
