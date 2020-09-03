@@ -6,10 +6,14 @@ import NavBar from "./Components/NavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Widget, addResponseMessage } from "react-chat-widget";
 import 'react-chat-widget/lib/styles.css';
+import axios from "axios";
 
-const handleNewUserMessage = (newMessage) => {
-  console.log(newMessage);
-  addResponseMessage("<p> hey -> " + newMessage + "</p>");
+const handleNewUserMessage = (message) => {
+  axios.post('http://127.0.0.1:5002/getMessage', { message }).then((res) => {
+    console.log(res.data.text)  
+    addResponseMessage(res.data.text);
+
+  });
 }
 
 export default function App() {
